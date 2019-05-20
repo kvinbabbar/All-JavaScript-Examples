@@ -10,6 +10,7 @@
 				padding: 0;
 				box-sizing: border-box;
 				transition: transform .5s;
+				font-family: sans-serif;
 			}
 			img {
 				max-width: 100%;
@@ -17,14 +18,19 @@
 			}
 			.slider {
 				width: 100%;
-				height: auto;
+				height: 100%;
 				overflow: hidden;
+				position: relative;
 			}
 			.slider .slider-inner{
 				display: flex;
 			}
 			.slider .slider-inner .slides {
 				position: relative;
+			}
+			.slider .slider-inner .slides img{
+				user-select: none;
+				-webkit-user-drag: none
 			}
 			.arrows {
 				font-size: 25px;
@@ -36,14 +42,37 @@
 				vertical-align: middle;
 				box-shadow: 0 3px 15px 0 rgba(0,0,0,0.2);
 				text-align: center;
-				display: inline-table;
+				display: block;
 				text-decoration: none;
-				margin: 10px auto;
+				position: absolute;
+				z-index: 9;
+				top: 50%;
+				margin-top: -25px;
+			}
+			.arrows.right{
+				right: 0;
+			}
+			.arrows.left{
+				left: 0;
+			}
+			.arrows.right{
+				right: 0;
 			}
 			.text-center{
-			    z-index: 9999999;
-				position: relative;
 				text-align: center;
+			}
+			.img-caption{
+				position: absolute;
+				bottom: 10px;
+				left: 50%;
+				transform: translateX(-50%);
+				color: #fff;
+				text-align: center;
+				width: 90%;
+				margin: auto;
+				background: rgba(0,0,0,.1);
+				padding: 10px;
+				border-radius: 5px;
 			}
 		</style>
 	</head>
