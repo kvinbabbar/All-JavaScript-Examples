@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8" />
+		<title>Carousel</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				transition: transform .5s;
+			}
+			img {
+				max-width: 100%;
+				width: 100%;
+			}
+			.slider {
+				width: 100vw;
+				height: 100vh;
+				overflow: hidden;
+			}
+			.slider .slider-inner{
+				display: flex;
+			}
+			.slider .slider-inner .slides {
+				position: relative;
+			}
+			.arrows {
+				font-size: 25px;
+				color: #000;
+				background: #fff;
+				width: 70px;
+				height: 50px;
+				line-height: 50px;
+				vertical-align: middle;
+				box-shadow: 0 3px 15px 0 rgba(0,0,0,0.2);
+				text-align: center;
+				display: inline-table;
+				text-decoration: none;
+				margin: 10px auto;
+			}
+			.text-center{
+			    z-index: 9999999;
+				position: relative;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slider">
+			<div class="slider-inner">
+				<div class="slides">
+					<img src="https://www.w3schools.com/bootstrap/la.jpg" alt="img" />
+					<div class="img-caption">
+						<h3>Hello World 1</h3>
+						<p>Carousels are not supported properly in Internet Explorer 9 and earlier (because they use CSS3 transitions and animations to achieve the slide effect).</p>
+					</div>
+				</div>
+				<div class="slides">
+					<img src="https://www.w3schools.com/bootstrap/chicago.jpg" alt="img" />
+					<div class="img-caption">
+						<h3>Hello World 2</h3>
+						<p>Carousels are not supported properly in Internet Explorer 9 and earlier (because they use CSS3 transitions and animations to achieve the slide effect).</p>
+					</div>
+				</div>
+				<div class="slides">
+					<img src="https://www.w3schools.com/bootstrap/ny.jpg" alt="img" />
+					<div class="img-caption">
+						<h3>Hello World 3</h3>
+						<p>Carousels are not supported properly in Internet Explorer 9 and earlier (because they use CSS3 transitions and animations to achieve the slide effect).</p>
+					</div>
+				</div>
+			</div>
+			<div class="text-center">	
+				<a class="arrows left" href="javascript:void(0);"><</a>
+				<a class="arrows right" href="javascript:void(0);">></a>
+			</div>
+		</div>
+		
+		<script>
+			var n = 0;
+			const imgs = document.querySelectorAll(".slides > img");
+			const slides = document.querySelectorAll(".slides");
+			const slider = document.querySelector(".slider");
+			const sliderInner = document.querySelector(".slider-inner");
+			const leftArrow = document.querySelector(".left");
+			const rightArrow = document.querySelector(".right");
+			let touchStart = false;
+			let firstTouch = 0;
+			let currentTouch = 0;
+			function setWidthOfContent(){
+				const currentWidth = window.innerWidth;
+				sliderInner.style.width = currentWidth * (imgs.length) + 'px';
+				slides.forEach(slide => {
+					slide.style.width = currentWidth + "px";
+				});
+			}
+			function moveSlider(x){
+				n += x;
+				if(n >= imgs.length){
+					n = 0;
+				}
+				if(n < 0){
+					n = imgs.length - 1;
+				}
+				slides.forEach(slide => {
+					slide.style.transform = `translateX(${-100 * n}%)`;			
+				});
+			}
+			function sliderTouchStart(e) {
+				touchStart = true;
+				firstTouch = e.touches[0].clientX;
+				console.log(firstTouch)
+			}
+			function sliderTouchMove (e){
+				if(touchStart) {
+					currentTouch = e.touches[0].clientX;
+				}
+			}
+			function sliderTouchEnd (e){
+				const direction = firstTouch - currentTouch;
+				if(direction < -50){
+					moveSlider(-1);
+				}
+				if(direction > 50){
+					moveSlider(1);
+				}
+			}
+			function moveRight() {
+				moveSlider(1);
+			}
+			function moveLeft() {
+				moveSlider(-1);
+			}
+			sliderInner.addEventListener('touchstart', sliderTouchStart);
+			sliderInner.addEventListener('touchend', sliderTouchEnd);
+			sliderInner.addEventListener('touchmove', sliderTouchMove);
+			window.addEventListener('resize', setWidthOfContent);
+			window.addEventListener('load', setWidthOfContent);
+			rightArrow.addEventListener('click', moveRight);
+			leftArrow.addEventListener('click', moveLeft);
+		</script>
+	</body>
+</html>
