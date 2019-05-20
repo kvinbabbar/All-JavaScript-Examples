@@ -217,7 +217,6 @@
 			}
 			function moveSlider(x, i){
 				i = parseInt(i);
-				console.log(n, x, i, 1);
 				if(x){
 					n += x;
 				}else{
@@ -229,7 +228,6 @@
 				if(n < 0){
 					n = imgs.length - 1;
 				}
-				console.log(n, x, i, 2);
 				updateIndecators(n);
 				slides.forEach(slide => {
 					slide.style.transform = `translateX(${-100 * n}%)`;			
@@ -251,13 +249,19 @@
 				}
 			}
 			function sliderTouchEnd (e){
+				if(currentTouch == 0){
+					return;
+				}
 				const direction = firstTouch - currentTouch;
+				console.log(`direction = ${direction}, currentTouch = ${currentTouch}, firstTouch = ${firstTouch}`)
 				if(direction < -50){
 					moveSlider(-1);
 				}
 				if(direction > 50){
 					moveSlider(1);
 				}
+				currentTouch = 0;
+				touchStart = false;
 			}
 			function moveRight() {
 				moveSlider(1);
