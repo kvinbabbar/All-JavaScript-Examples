@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Modal Box Slider Demo</title>
+	<!-- slide css file -->
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+</head>
+<body>
+<h1>Modal Box Slider Demo</h1>
+<!-- All images -->
+<div class="row">
+	<div class="column">
+		<img src="https://www.w3schools.com/howto/img_nature_wide.jpg" class="funcImg" alt="1" />
+	</div>
+	<div class="column">
+		<img src="https://www.w3schools.com/howto/img_fjords_wide.jpg" class="funcImg" alt="2" />
+	</div>
+	<div class="column">
+		<img src="https://www.w3schools.com/howto/img_mountains_wide.jpg" class="funcImg" alt="3" />
+	</div>
+	<div class="column">
+		<img src="https://www.w3schools.com/howto/img_lights_wide.jpg" class="funcImg" alt="4" />
+	</div>
+</div>
+<!-- Modal Box -->
+<div class="modal" id="myModal">
+	<span id="close">&times;</span>
+	<div class="container">
+		<div class="current-img-div">
+			<img id="currentImg"/>
+			<a id="popPrev" class="prev">&#10094;</a>
+			<a id="popNext" class="next">&#10095;</a>
+			<div id="caption"></div>
+		</div>
+	</div>
+</div>
+<!-- slider js file -->
+<script src="js/script.js"></script>
+</body>
+</html> 

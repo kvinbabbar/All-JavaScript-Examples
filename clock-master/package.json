@@ -1,0 +1,23 @@
+{
+  "name": "clock",
+  "version": "1.0.0",
+  "description": "A clock",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kvinbabbar/clock.git"
+  },
+  "author": "kuldeep",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kvinbabbar/clock/issues"
+  },
+  "homepage": "https://github.com/kvinbabbar/clock#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp-sass": "^4.0.2"
+  }
+}

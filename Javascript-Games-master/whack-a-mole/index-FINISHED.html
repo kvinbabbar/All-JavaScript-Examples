@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Whack A Mole Game</title>
+	<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+</head>
+<body>
+	<main>
+		<header>
+			<h1 class="text-center">Whack A Mole <span class="score">0</span></h1>
+		</header>
+		<button class="start">Start</button>
+		<section class="main-holes">
+			<section class="mole-holes">
+				<div class="hole hole1">
+					<img src="img/mole.png" alt="mole" class="mole" />
+					<img src="img/hole.svg" alt="hole" />
+				</div>
+				<div class="hole hole2">
+					<img src="img/mole.png" alt="mole" class="mole" />
+					<img src="img/hole.svg" alt="hole" />
+				</div>
+				<div class="hole hole3">
+					<img src="img/mole.png" alt="mole" class="mole" />
+					<img src="img/hole.svg" alt="hole" />
+				</div>
+			</section>
+			<section class="mole-holes">
+				<div class="hole hole4">
+					<img src="img/mole.png" alt="mole" class="mole" />
+					<img src="img/hole.svg" alt="hole" />
+				</div>
+				<div class="hole hole5">
+					<img src="img/mole.png" alt="mole" class="mole" />
+					<img src="img/hole.svg" alt="hole" />
+				</div>
+				<div class="hole hole6">
+					<img src="img/mole.png" alt="mole" class="mole" />
+					<img src="img/hole.svg" alt="hole" />
+				</div>
+			</section>
+		</section>
+	</main>
+	<script type="text/javascript">
+		// js here
+		const moles = document.querySelectorAll(".mole");
+		const holes = document.querySelectorAll(".hole");
+		const scoreBoard = document.querySelector(".score");
+		const start = document.querySelector(".start");
+		let lastHole;
+		let timeUp = false;
+		let score = 0;
+		
+		function randomTime(min, max){
+			return Math.round(Math.random() * (max - min) + min);
+		}
+		
+		function randomHole(h){
+			const idx = Math.floor(Math.random() * holes.length);
+			const hole = h[idx];
+			if(hole === lastHole){
+				console.log("not again");
+				return randomHole(h)
+			}
+			lastHole = hole;
+			return hole;
+		}
+		
+		function peep(){
+			const time = randomTime(400,1000);
+			const hole = randomHole(holes);
+			hole.classList.add("up");
+			setTimeout(() => {
+				hole.classList.remove("up");
+				if(!timeUp) peep();
+			}, time);
+		}
+		
+		function startGame(){
+			scoreBoard.textContent = 0;
+			timeUp = false;
+			peep();
+			setTimeout(() => timeUp = true, 10000);
+		}
+		
+		function bonk(e){
+			if(!e.isTrusted) return;
+			score++;
+			this.parentNode.classList.remove('up');
+			scoreBoard.textContent = score;
+			
+		}
+		start.addEventListener("click", startGame);
+		moles.forEach(mole => mole.addEventListener("click", bonk));
+	</script>
+</body>
+</html>

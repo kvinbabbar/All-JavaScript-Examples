@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: verdana, sans-serif; }
+
+.container {
+  overflow: hidden;
+  margin-top: 50px; }
+
+.filterDiv {
+  float: left;
+  background-color: #2196F3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  animation: fade .5s; }
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scaleY(0); }
+  to {
+    opacity: 1;
+    transform: scaleY(1); } }
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block; }
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  /* Add a light grey background on mouse-over */ }
+.btn:hover {
+  background-color: #ddd; }
+
+/* Add a dark background to the active button */
+.btn.active {
+  background-color: #666;
+  color: white; }
+
+/*# sourceMappingURL=style.css.map */

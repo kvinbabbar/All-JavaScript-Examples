@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="icon" href="img/back.png" />
+	<title>A Drum kit collection in Javascript</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+	<link href="https://fonts.googleapis.com/css?family=Black+And+White+Picture" rel="stylesheet">
+</head>
+<body>
+	<div class="dk-main">
+		<div class="dk-container">
+			<div class="dk-inner text-center">
+				<h2>DRUM KIT</h2>
+				
+				<div class="dk-instruments">
+					<div>
+						<a href="#" class="key" data-key="65">boom</a>
+						<p>Press A</p>
+					</div>
+					<div>
+						<a href="#" class="key" data-key="83">clap</a>
+						<p>Press S</p>
+					</div>
+					<div>
+						<a href="#" class="key" data-key="68">hihat</a>
+						<p>Press D</p>
+					</div>
+					<div>
+						<a href="#" class="key" data-key="70">kick</a>
+						<p>Press F</p>
+					</div>
+					<div>
+						<a href="#" class="key" data-key="71">openhat</a>
+						<p>Press G</p>
+					</div>
+					<div>
+						<a href="#" class="key" data-key="72">ride</a>
+						<p>Press H</p>
+					</div>
+					<div>
+						<a href="#" class="key" data-key="74">snare</a>
+						<p>Press J</p>
+					</div>
+					<div>
+						<a href="#" class="key" data-key="75">tink</a>
+						<p>Press K</p>
+					</div>
+					<div>
+						<a href="#" class="key" data-key="76">tom</a>
+						<p>Press L</p>
+					</div>
+				</div>
+				
+				<div class="dk-audio-files hide">
+					<audio data-key="65">
+						<source src="sounds/boom.wav" type="audio/wav" />
+					</audio>
+					<audio data-key="83">
+						<source src="sounds/clap.wav" type="audio/wav" />
+					</audio>
+					<audio data-key="68">
+						<source src="sounds/hihat.wav" type="audio/wav" />
+					</audio>
+					<audio data-key="70">
+						<source src="sounds/kick.wav" type="audio/wav" />
+					</audio>
+					<audio data-key="71">
+						<source src="sounds/openhat.wav" type="audio/wav" />
+					</audio>
+					<audio data-key="72">
+						<source src="sounds/ride.wav" type="audio/wav" />
+					</audio>
+					<audio data-key="74">
+						<source src="sounds/snare.wav" type="audio/wav" />
+					</audio>
+					<audio data-key="75">
+						<source src="sounds/tink.wav" type="audio/wav" />
+					</audio>
+					<audio data-key="76">
+						<source src="sounds/tom.wav" type="audio/wav" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<div class="dk-filter" id="dkFilterBtn">
+		<span></span>
+		<span></span>
+	</div>
+	<div class="dk-filter-container" id="dkFilterContainer">
+		<label><input type="checkbox" checked data-key="65"/> <p class="dk-filter-checkbox">boom</p></label>
+		<label><input type="checkbox" checked data-key="83"/> <p class="dk-filter-checkbox">clap</p></label>
+		<label><input type="checkbox" checked data-key="68"/> <p class="dk-filter-checkbox">hihat</p></label>
+		<label><input type="checkbox" checked data-key="70"/> <p class="dk-filter-checkbox">kick</p></label>
+		<label><input type="checkbox" checked data-key="71"/> <p class="dk-filter-checkbox">openhat</p></label>
+		<label><input type="checkbox" checked data-key="72"/> <p class="dk-filter-checkbox">ride</p></label>
+		<label><input type="checkbox" checked data-key="74"/> <p class="dk-filter-checkbox">snare</p></label>
+		<label><input type="checkbox" checked data-key="75"/> <p class="dk-filter-checkbox">tink</p></label>
+		<label><input type="checkbox" checked data-key="76"/> <p class="dk-filter-checkbox">tom</p></label>
+	</div>
+	<script src="js/script.js"></script>	
+</body>
+</html>

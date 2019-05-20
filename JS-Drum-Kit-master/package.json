@@ -1,0 +1,33 @@
+{
+  "name": "js-drum-kit",
+  "version": "1.0.0",
+  "description": "A collection of drum kit written in pure JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kvinbabbar/JS-Drum-Kit.git"
+  },
+  "keywords": [
+    "drum-kit",
+    "sounds"
+  ],
+  "author": "kuldeep",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kvinbabbar/JS-Drum-Kit/issues"
+  },
+  "homepage": "https://github.com/kvinbabbar/JS-Drum-Kit#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+<<<<<<< HEAD
+    "gulp": "^4.0.0",
+=======
+    "gulp": "^3.9.0",
+>>>>>>> 4f30de0ceb82eee80820a559c29440e5e6f56af7
+    "gulp-sass": "^4.0.2"
+  }
+}

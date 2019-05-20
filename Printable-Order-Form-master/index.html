@@ -1,0 +1,455 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>A printable order form</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+</head>
+<body>
+	<div class="tri-container-fluid">
+		<div class="tri-cards">
+			<div class="tri-cards-heading">Order Form</div>
+			<div class="order-form-header">
+				<div class="text-right">
+					<p><span>Questions? </span> +1 800-276-6129</p>
+				</div>
+				<p><span>Note: </span> Complete order form and click print button to print out the form. Credit card information is optional we can obtain it over the phone once denture is recieved. Shipping is free with prepaid label. Overnight shipping is suggested. We ship back with free USPS Priority mail. Upgrade to USPS Express for $25.</p>
+				<p><span>Mail to: </span>Tristate Dental Lab | 2418 West 2nd Street Chester | PA. 19013</p>
+			</div>
+			<div class="order-form-inputs-main">
+				<form action="#">
+					<div class="tri-cards">
+						<div class="tri-cards-heading">Customer Information</div>
+						<div class="tri-row">
+							<div class="tri-col-sm-6">
+								<div class="order-inputs-field">
+									<span class="order-form-input-label">First Name</span>
+									<input type="text" id="firstName" />
+								</div>
+							</div>
+							<div class="tri-col-sm-6">
+								<div class="order-inputs-field">
+									<span class="order-form-input-label">Last Name</span>
+									<input type="text" id="lastName" />
+								</div>
+							</div>
+							<div class="tri-col-sm-6">
+								<div class="order-inputs-field">
+									<span class="order-form-input-label">Email</span>
+									<input type="text" id="clientEmail" />
+								</div>
+							</div>
+							<div class="tri-col-sm-6">
+								<div class="order-inputs-field">
+									<span class="order-form-input-label">Phone No.</span>
+									<input type="text" id="clientPhone" />
+								</div>
+							</div>
+							<div class="tri-col-sm-6">
+								<div class="order-inputs-field">
+									<span class="order-form-input-label">Address</span>
+									<input type="text" id="clientAddress" />
+								</div>
+							</div>
+							<div class="tri-col-sm-6">
+								<div class="order-inputs-field">
+									<span class="order-form-input-label">City</span>
+									<input type="text" id="clientCity" />
+								</div>
+							</div>
+							<div class="tri-col-sm-6">
+								<div class="order-inputs-field">
+									<span class="order-form-input-label">State</span>
+									<select id="clientState"></select>
+								</div>
+							</div>
+							<div class="tri-col-sm-6">
+								<div class="order-inputs-field">
+									<span class="order-form-input-label">Zipcode</span>
+									<input type="text" id="clientZipcode" />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tri-cards">
+						<div class="tri-cards-heading">Payment Information</div>
+						<div class="tri-row">
+							<div class="tri-col-sm-12 payment-opt-main">
+								<div class="flex-tri-row">
+									<div class="tri-col-sm-equal">
+										<img src="https://tristatedentallab.com/wp-content/uploads/2018/11/payment-option1.png" alt="payment option" class="payment-opt-selectable"/>
+									</div>
+									<div class="tri-col-sm-equal">
+										<img src="https://tristatedentallab.com/wp-content/uploads/2018/11/payment-option2.png" alt="payment option" class="payment-opt-selectable"/>
+									</div>
+									<div class="tri-col-sm-equal">
+										<img src="https://tristatedentallab.com/wp-content/uploads/2018/11/payment-option3.png" alt="payment option" class="payment-opt-selectable"/>
+									</div>
+									<div class="tri-col-sm-equal">
+										<img src="https://tristatedentallab.com/wp-content/uploads/2018/11/payment-option4.png" alt="payment option" class="payment-opt-selectable"/>
+									</div>
+									<div class="tri-col-sm-equal">
+										<img src="https://tristatedentallab.com/wp-content/uploads/2018/11/payment-option5.png" alt="payment option" class="payment-opt-selectable"/>
+									</div>
+								</div>
+							</div>
+							<div class="tri-col-sm-6">
+								<div class="order-inputs-field">
+									<span class="order-form-input-label">Credit Card</span>
+									<input type="text" maxlength="16"/>
+								</div>
+							</div>
+							<div class="tri-col-sm-3">
+								<div class="order-inputs-field input-field-exp">
+									<span class="order-form-input-label">Expiration</span>
+									<input type="text" maxlength="2"/><span class="field-seprator"> / </span><input type="text" maxlength="2"/>
+								</div>
+							</div>
+							<div class="tri-col-sm-3">
+								<div class="order-inputs-field">
+									<span class="order-form-input-label">CVV (3 Digit Code)</span>
+									<input type="text" maxlength="3" />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tri-cards">
+						<div class="tri-cards-heading">Denture / Partial Repair</div>
+						<div class="tri-row">
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="29"/>
+									Glue Removal $29.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="29"/>
+									Metal Reinforcement $29.00  
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="189"/>
+									Rebuild Gum Area w/ New Acrylic $189.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="89"/>
+									1 Crack/Break/Fracture     $89.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="349"/>
+									Duplicate Denture $349.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="399"/>
+									Duplicate Partial $399.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="125"/>
+									2 Cracks/Breaks/Fractures $125.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="49"/>
+									Professional Cleaning & Polishing $49.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="155"/>
+									3 Cracks/Breaks/Fractures $155.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="45"/>
+									90 Day Warranty $45.00
+									<span></span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="tri-cards">
+						<div class="tri-cards-heading">Teeth Repair</div>
+						<div class="tri-row">
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="29"/>
+									Glue Removal $29.00
+									<span></span>  
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="29"/>
+									Metal Reinforcement $29.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="189"/>
+									Rebuild Gum Area w/ New Acrylic $189.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="95"/>
+									1 Tooth (you supply tooth) $95.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="115"/>
+									1 Tooth ( lab supply teeth) $115.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="135"/>
+									2 Teeth (you supply teeth) $135.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="185"/>
+									2 Teeth (lab supply teeth) $185.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="185"/>
+									3 Teeth (you supply teeth) $185.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="225"/>
+									3 Teeth (lab supply teeth) $225.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="349"/>
+									Duplicate Denture $349.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="399"/>
+									Partial $399.00 
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="49"/>
+									Cleaning /Polishing $49.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="45"/>
+									90 Day Warranty $45.00
+									<span></span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="tri-cards">
+						<div class="tri-cards-heading">Flexible Partial Repair</div>
+						<div class="tri-row">
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="29"/>
+									Glue Removal $29.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="29"/>
+									Metal Reinforcement $29.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="205"/>
+									1 Tooth (lab supply) $205.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="219"/>
+									1 Crack/Break/Fracture $219.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="185"/>
+									1 Tooth (you supply) $185.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="259"/>
+									2 Cracks/Breaks/Fractures $259.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="215"/>
+									2 Teeth (you supply) $215.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="235"/>
+									2 Teeth (lab supply) $235.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="399"/>
+									Duplicate Partial $399.00 
+									<span></span> 
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="49"/>
+									Cleaning & Polishing $49.00 
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="75"/>
+									90 Day Warranty $75.00
+									<span></span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="tri-cards">
+						<div class="tri-cards-heading">Duplicate Denture / Partial</div>
+						<div class="tri-row">
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="349"/>
+									Duplicate Denture  $349.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="35"/>
+									1 Shade Whitter Teeth $35.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="399"/>
+									Duplicate Partial (non metal) $399.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="49"/>
+									Cleaning & Polishing $49.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="45"/>
+									Duplic 90 Day Warranty $45.00
+									<span></span>
+								</label>
+							</div>
+							<div class="tri-col-sm-6">
+								<label>
+									<input type="checkbox" value="45"/>
+									90 Day Warranty $45.00
+									<span></span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="tri-cards order-form-total">
+						<div class="tri-cards-heading">Total</div>
+						<div class="tri-row">
+							<div class="tri-col-sm-6 text-left">Total Payable Amout</div>
+							<div class="tri-col-sm-6 text-right">$ <span>200.00</span></div>
+						</div>
+					</div>
+					<div class="tri-cards">
+						<div class="tri-cards-heading">Additional Information</div>
+						<div class="tri-row">
+							<div class="tri-col-sm-12">
+								<div class="order-inputs-field">
+									<span class="order-form-input-label">Any Instructions</span>								
+									<textarea></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tri-cards">
+						<div class="tri-cards-heading">Print Order Form</div>
+						<div class="tri-row">
+							<div class="tri-col-sm-6">
+								<div class="order-inputs-field">
+									<span class="order-form-input-label">Coupan</span>
+									<input type="text"/>	
+								</div>							
+							</div>
+							<div class="tri-col-sm-6 text-right">
+								<button id="orderFormBtn" class="sc_button_hover_slide_left">Print Order Form</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: verdana, sans-serif;
+}
+$defualtBackgroundBtn: tomato;
+body{
+	padding: 24px;
+}
+%text-decoration-none{
+	text-decoration: none;
+}
+/* mixins */
+@mixin pf-transform($transformProp){
+	-webkit-transform: $transformProp;
+	-moz-transform: $transformProp;
+	-ms-transform: $transformProp;
+	transform: $transformProp;
+}
+@keyframes pf-zoom-in{
+	from{opacity: 0.1; @include pf-transform(scaleY(0.1))}
+	to{opacity: 1; @include pf-transform(scaleY(1))}
+}
+/* --styling button -- */
+.pf-dropdown{
+	position: relative;
+	
+	&-btn{
+		display: inline-block;
+		padding: 8px 12px;
+		background: $defualtBackgroundBtn;
+		color: #fff;
+		text-decoration: none;
+	}
+	
+	&-content{
+		transform-origin: 0 0;
+		position: absolute;
+		top: 100%;
+		list-style: none;
+		background: #fff;
+		display: none;
+		box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+		min-width: 160px;
+		animation:  pf-zoom-in .3s ease-in-out;
+		
+		&>li{
+			a{
+				padding: 8px 15px;
+				display: inline-block;
+				width: 100%;
+				@extend %text-decoration-none;
+				
+				&:hover, &:active{
+					background: #eee;
+				}
+			}
+		}
+	}
+}
+.pf-sub-dropdown .pf-dropdown-content{
+	left: 100%;
+	top: 0;
+}
+.pf-show{
+	display: block;
+}

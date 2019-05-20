@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<title>Filterable Element</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+</head>
+<body>
+	<!-- Control buttons -->
+	<div id="myBtnContainer">
+	  <button class="btn active" data-categories="all"> Show all</button>
+	  <button class="btn" data-categories="cars"> Cars</button>
+	  <button class="btn" data-categories="animals"> Animals</button>
+	  <button class="btn" data-categories="fruits"> Fruits</button>
+	  <button class="btn" data-categories="colors"> Colors</button>
+	</div>
+
+	<!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+	<div class="container">
+	  <div class="filterDiv cars">BMW</div>
+	  <div class="filterDiv colors fruits">Orange</div>
+	  <div class="filterDiv cars">Volvo</div>
+	  <div class="filterDiv colors">Red</div>
+	  <div class="filterDiv cars animals">Mustang</div>
+	  <div class="filterDiv colors">Blue</div>
+	  <div class="filterDiv animals">Cat</div>
+	  <div class="filterDiv animals">Dog</div>
+	  <div class="filterDiv fruits">Melon</div>
+	  <div class="filterDiv fruits animals">Kiwi</div>
+	  <div class="filterDiv fruits">Banana</div>
+	  <div class="filterDiv fruits">Lemon</div>
+	  <div class="filterDiv animals">Cow</div>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+</html>

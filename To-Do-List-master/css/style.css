@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'helvetica', sans-serif;
+  transition: all .4s; }
+
+::-webkit-scrollbar {
+  width: 5px; }
+
+::-webkit-scrollbar-track {
+  background: #e7e7e7; }
+
+::-webkit-scrollbar-thumb {
+  background: #60b5ff; }
+
+::-webkit-input-placeholder {
+  color: #fff;
+  font-size: 12px; }
+
+::-moz-placeholder {
+  color: #fff;
+  font-size: 12px; }
+
+:-moz-placeholder {
+  color: #fff;
+  font-size: 12px; }
+
+:-ms-input-placeholder {
+  color: #fff;
+  font-size: 12px; }
+
+::placeholder {
+  color: #fff;
+  font-size: 12px; }
+
+main {
+  max-width: 500px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 5% auto;
+  border-radius: 3px;
+  overflow: hidden; }
+main #toDoBoxContainer {
+  background: #45aaf1;
+  padding: 15px; }
+main #toDoBoxContainer > div {
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2); }
+main #toDoBoxContainer > div:after {
+  content: '';
+  clear: both;
+  display: table; }
+main #toDoBoxContainer #toDoBox, main #toDoBoxContainer #toDoBoxBtn {
+  width: 85%;
+  height: 35px;
+  float: left;
+  background: #60b5ff;
+  border: 0;
+  color: #fff;
+  font-size: 18px;
+  outline: none; }
+main #toDoBoxContainer #toDoBox {
+  border-radius: 3px 0 0 3px;
+  padding: 5px 10px; }
+main #toDoBoxContainer #toDoBoxBtn {
+  width: 15%;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #60b5ff;
+  border-radius: 0 3px 3px 0;
+  border-left: 1px solid #309fff; }
+main #toDoBoxContainer #toDoBoxBtn:hover {
+  background: #035690; }
+main #toDoListContainer {
+  background: #0161a5;
+  max-height: 300px;
+  overflow: auto; }
+main #toDoListContainer > ul {
+  list-style: none; }
+main #toDoListContainer > ul li {
+  cursor: pointer; }
+main #toDoListContainer > ul li > span {
+  padding: 15px;
+  color: #fff;
+  text-transform: capitalize;
+  display: inline-block; }
+main #toDoListContainer > ul li > span.close {
+  float: right;
+  font-weight: 700;
+  font-size: 12px;
+  font-family: verdana; }
+main #toDoListContainer > ul li > span.close:hover {
+  background: tomato; }
+main #toDoListContainer > ul li:not(:last-child) {
+  border-bottom: 1px solid #035690; }
+
+.task-completed {
+  margin-left: 25px;
+  position: relative;
+  text-decoration: line-through; }
+.task-completed:before {
+  content: '\2713';
+  position: absolute;
+  top: 12px;
+  left: -8px; }
+
+.task-completed-parent {
+  background: #125788; }
+
+/*# sourceMappingURL=style.css.map */

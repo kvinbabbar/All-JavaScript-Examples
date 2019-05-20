@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  line-height: 1;
+  font-family: 'Black And White Picture', sans-serif;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.hide {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.dk-main {
+  background: url("../img/back.png") 100% 100%/cover no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+.dk-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dk-inner {
+  padding: 30px 0;
+}
+
+.dk-inner h2 {
+  font-size: 55px;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.dk-instruments {
+  margin-top: 30vh;
+  display: flex;
+}
+
+.dk-instruments > div {
+  flex: 1;
+  padding: 10px;
+}
+
+.dk-instruments > div a {
+  color: #fff;
+  font-size: 28px;
+  text-transform: capitalize;
+  border: 5px solid #fff;
+  display: block;
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  vertical-align: middle;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all .1s ease;
+}
+
+.dk-instruments > div a.active {
+  transform: scale(1.2);
+  box-shadow: 0 2px 20px 0 #fff;
+  border-color: tomato;
+  color: tomato;
+}
+
+.dk-instruments > div p {
+  color: #fff;
+}
+
+.dk-filter {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.dk-filter > span {
+  background: #fff;
+  width: 30px;
+  height: 3px;
+  display: block;
+  border-radius: 1px;
+}
+
+.dk-filter > span:last-child {
+  margin-top: 5px;
+}
+
+.dk-filter > span.active:first-child {
+  transform: rotate(45deg) translate(5px);
+}
+
+.dk-filter > span.active:last-child {
+  transform: rotate(-45deg);
+}
+
+.dk-filter-container {
+  height: auto;
+  position: fixed;
+  left: -100%;
+  z-index: 99;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 5px 0 20px 0 rgba(0, 0, 0, 0.2);
+  transition: all .1s;
+}
+
+.dk-filter-container.active {
+  top: 40px;
+  left: 10px;
+}
+
+.dk-filter-container label {
+  padding: 10px;
+  padding-left: 30px;
+  position: relative;
+  cursor: pointer;
+  display: block;
+}
+
+.dk-filter-container label:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dk-filter-container label input[type="checkbox"] {
+  display: none;
+}
+
+.dk-filter-container label p:before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border: 1px solid tomato;
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  border-radius: 50px;
+}
+
+.dk-filter-container label input[type="checkbox"]:checked + p:before {
+  background: red;
+}

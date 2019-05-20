@@ -1,0 +1,37 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'helvetica', sans-serif;
+	transition: all .4s; 
+}
+.compare-img-container{
+	position: relative;
+	height: 200px;
+}
+.comp-img-inner{
+	position: absolute;
+	width: auto;
+	height: auto;
+	overflow:hidden;
+}
+.comp-img-inner.comp-img-overlay{
+	z-index: 99;
+
+}
+.comp-img-inner.comp-img-overlay img{
+	display:block;
+	vertical-align:middle;
+}
+.img-comp-slider {
+  position: absolute;
+  z-index:9;
+  cursor: ew-resize;
+  /*set the appearance of the slider:*/
+  width: 40px;
+  height: 40px;
+  background-color: #2196F3;
+  opacity: 0.7;
+  border-radius: 50%;
+  z-index: 999;
+}

@@ -1,0 +1,42 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: verdana, sans-serif;
+}
+
+.pf-accordion{
+	padding: 10px;
+}
+.pf-accordion .pf-accordion-btn{
+	position: relative;
+	width: 100%;
+	padding: 15px 25px;
+	background: #f7f7f7;
+	border: .5px solid #f1f1f1;
+	cursor: pointer;
+	text-align: left;
+	font-size: 22px;
+	font-weight: 500;
+	outline: none;
+}
+.pf-accordion .pf-accordion-btn:hover,
+.pf-accordion .pf-accordion-btn.active{
+	transition: all .5s;
+	background: #ccc;
+}
+.pf-accordion .pf-accordion-btn:after{
+	content: '+';
+	position: absolute;
+	right: 10px;
+}
+.pf-accordion .pf-accordion-btn.active:after{
+	content: '-';
+}
+.pf-accordion .pf-accordion-content{
+	display: none;
+	padding: 10px;
+	transform: scaleY(0);
+	transition: transform .5s;
+	transform-origin: 0 0;
+}

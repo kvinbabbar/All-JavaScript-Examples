@@ -1,0 +1,137 @@
+$boxBackgroundColor: #60b5ff;
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'helvetica', sans-serif;
+	transition: all .4s;
+}
+::-webkit-scrollbar{
+	width: 5px;
+}
+::-webkit-scrollbar-track{
+	background: #e7e7e7;
+}
+::-webkit-scrollbar-thumb{
+	background: $boxBackgroundColor;
+}
+::-webkit-input-placeholder{
+	color: #fff;
+	font-size: 12px;
+}
+::-moz-placeholder{
+	color: #fff;
+	font-size: 12px;
+}
+:-moz-placeholder{
+	color: #fff;
+	font-size: 12px;
+}
+:-ms-input-placeholder{
+	color: #fff;
+	font-size: 12px;
+}
+::placeholder{
+	color: #fff;
+	font-size: 12px;
+}
+main{
+	max-width: 500px;
+	width: 100%;
+	background: #fff;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	margin: 5% auto;
+	border-radius: 3px;
+	overflow: hidden;
+
+	#toDoBoxContainer{
+		background: #45aaf1;
+		padding: 15px;
+		
+		&>div{
+			box-shadow: 0 0 1px 0 rgba(0,0,0,.2);
+			
+			&:after{
+				content: '';
+				clear: both;
+				display: table;
+			}
+		}
+		%toDoBoxStyle{
+			width: 85%;
+			height: 35px;
+			float: left;
+			background: $boxBackgroundColor;
+			border: 0;
+			color: #fff;
+			font-size: 18px;
+			outline: none;
+		}
+		#toDoBox{
+			@extend %toDoBoxStyle;
+			border-radius: 3px 0 0 3px;
+			padding: 5px 10px;
+		}
+		#toDoBoxBtn{
+			@extend %toDoBoxStyle;
+			width: 15%;
+			text-transform: uppercase;
+			cursor: pointer;
+			background: $boxBackgroundColor;
+			border-radius: 0 3px 3px 0;
+			border-left: 1px solid #309fff;
+			
+			&:hover{
+				background: #035690;
+			}
+		}
+	}
+	#toDoListContainer{
+		background: #0161a5;
+		max-height: 300px;
+		overflow: auto;
+		
+		&>ul{
+			list-style: none;
+			
+			li{
+				cursor: pointer;
+
+				&>span{
+					padding: 15px;
+					color: #fff;
+					text-transform: capitalize;
+					display: inline-block;
+				}
+				&>span.close{
+					float: right;
+					font-weight: 700;
+					font-size: 12px;
+					font-family: verdana;
+					
+					&:hover{
+						background: tomato;
+					}
+				}
+				&:not(:last-child){
+					border-bottom: 1px solid #035690;
+				}
+			}
+		}
+	}
+}
+.task-completed{
+	margin-left: 25px;
+	position: relative;
+	text-decoration: line-through;
+	
+	&:before{
+		content: '\2713';
+		position: absolute;
+		top: 12px;
+		left: -8px;
+	}
+}
+.task-completed-parent{
+	background: #125788;
+}

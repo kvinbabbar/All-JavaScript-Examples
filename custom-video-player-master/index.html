@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Custom Video Player</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/simple-line-icons.css" media="all" />
+</head>
+<body>
+	<div class="player">
+		<video oncontextmenu="return false;" src="video.mp4" height="100%" width="100%" class="player-video"></video>
+		<div class="player-controls">
+			<div class="controls player-controls-upper">
+				<div class="player-row">
+					<div class="controls-up player-left">
+						<div class="player-time">0:00 / 0:00</div>
+						<div class="player-toggle"><i class="icon-control-play"></i></div>
+						<div class="range-toggle player-volume">
+							<i class="icon-volume-2"></i>
+							<input type="range" name="volume" min="0" max="1" step="0.01" value="1"/>
+						</div>
+						<div class="range-toggle player-playbackRate">
+							<i class="icon-speedometer"></i>
+							<input type="range" name="playbackRate" min="0" max="2" step="0.01" value="1"/>
+						</div>
+					</div>
+					<div class="controls-up player-right">
+						<div class="player-skip" data-skip="-10"><i class="icon-control-rewind"></i></div>						
+						<div class="player-skip" data-skip="10"><i class="icon-control-forward"></i></div>
+						<div class="player-fullscreen"><i class="icon-size-fullscreen"></i></div>
+					</div>
+				</div>
+			</div>
+			<div class="controls player-controls-lower">
+				<div class="player-progress">
+					<div class="player-progress-filled"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+</html>

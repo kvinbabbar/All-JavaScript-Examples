@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  line-height: 1;
+  font-family: sans-serif;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.hide {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.cl-main {
+  width: 100vw;
+  height: 100vh;
+  background: url("../img/back.jpg") 100% 100%/cover no-repeat;
+  position: relative;
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  border: 20px solid #fff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  padding: 15px;
+}
+
+.clock .cl-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.clock .cl-body:after {
+  content: '';
+  width: 20px;
+  height: 15px;
+  background: #fff;
+  border-radius: 1px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock .cl-body > span {
+  width: 50%;
+  display: inline-block;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  transform: rotate(0deg);
+  background: #fff;
+  transform-origin: 100% 100%;
+  transition: all 1s cubic-bezier(0.68, 0.46, 0, 0.69);
+}
+
+.clock .cl-body .sec-hand {
+  height: 1.5px;
+}
+
+.clock .cl-body .hrs-hand {
+  width: 35%;
+  left: 15%;
+}

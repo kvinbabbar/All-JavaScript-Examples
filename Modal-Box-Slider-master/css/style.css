@@ -1,0 +1,114 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: verdana, sans-serif;
+}
+img{
+	width: 100%;
+}
+h1{
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 30px;
+}
+.row:after, .row:before{
+	content: '';
+	display: table;
+	clear: both;
+}
+.column{
+	width: 25%;
+	float: left;
+    padding: 0 8px;
+}
+.row .column img{
+	cursor: pointer;
+	width: 100%;
+}
+#myModal{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	padding-top: 100px;
+	display: none;
+	background: rgba(0,0,0,0.5);
+}
+div.container{
+	width: 80%;
+	max-width: 1100px;
+	position: relative;
+	margin: auto;
+}
+@keyframes zoomAnime{
+	0%{transform: scale(0.1); opacity(0.2)}
+	50%{transform: scale(1.3);}
+	100%{transform: scale(1); opacity(1)}
+}
+.current-img-div{
+	width: 100%;
+	margin: auto;
+	position: relative;
+	max-width: 1100px;
+	animation: zoomAnime .4s ease-in;
+}
+@keyframes fadeAnime{
+	0%{opacity: 0; visibility: 0}
+	40%{opacity: 1; visibility: 1}
+}
+#currentImg{
+	
+}
+/* Next & previous buttons */
+.prev,
+.next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -50px;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	-webkit-user-select: none;
+	background: rgba(0,0,0,.5)
+}
+
+#caption {
+	text-align: center;
+    background-color: rgba(0,0,0,.7);
+    padding: 2px 16px;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+}
+/* Position the "next button" to the right */
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.current-img-div img{
+	width: 100%;
+}
+#close {
+	color: white;
+	position: absolute;
+	top: 10px;
+	right: 25px;
+	font-size: 35px;
+	font-weight: bold;
+	cursor: pointer
+}

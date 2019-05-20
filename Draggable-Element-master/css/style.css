@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: verdana, sans-serif; }
+
+.pf-draggable {
+  position: absolute;
+  z-index: 99;
+  width: 250px;
+  background: #e7e7e7;
+  text-align: center;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2); }
+.pf-draggable-header {
+  background: tomato;
+  color: #fff;
+  padding: 8px 25px;
+  cursor: move; }
+.pf-draggable ul {
+  list-style: none; }
+.pf-draggable ul li {
+  padding: 8px 25px; }
+
+/*# sourceMappingURL=style.css.map */
