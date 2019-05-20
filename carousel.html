@@ -54,19 +54,19 @@
 				top: 50%;
 				margin-top: -25px;
 			}
-			.arrows.right{
+			.arrows.right {
 				right: 0;
 			}
-			.arrows.left{
+			.arrows.left {
 				left: 0;
 			}
-			.arrows.right{
+			.arrows.right {
 				right: 0;
 			}
-			.text-center{
+			.text-center {
 				text-align: center;
 			}
-			.img-caption{
+			.img-caption {
 				position: absolute;
 				bottom: 40px;
 				left: 50%;
@@ -80,7 +80,7 @@
 				border-radius: 5px;
 				z-index: 1;
 			}
-			.carousel-indicators{
+			.carousel-indicators {
 				position: absolute;
 				bottom: 10px;
 				height: 20px;
@@ -89,7 +89,7 @@
 				text-align: center;
 				line-height: 20px;
 			}
-			.carousel-indicators span{
+			.carousel-indicators span {
 				width: 15px;
 				height: 15px;
 				border: 1px solid #fff;
@@ -98,7 +98,7 @@
 				cursor: pointer;
 				position: relative;
 			}
-			.carousel-indicators span.active:after{
+			.carousel-indicators span.active:after {
 				content: '';
 				position: absolute;
 				top: 50%;
@@ -110,7 +110,7 @@
 				border-radius: 50%;
 				background: #fff;
 			}
-			.carousel-indicators span:not(:last-child){
+			.carousel-indicators span:not(:last-child) {
 				margin-right: 10px;
 			}
 			@media (max-width: 575px) {
@@ -118,7 +118,7 @@
 					ont-family: sans-serif;
 					font-size: .7rem;
 				}
-				.img-caption{
+				.img-caption {
 					bottom: 30px;
 				}
 				.arrows {
@@ -127,11 +127,11 @@
 					height: 30px;
 					line-height: 30px;
 				}
-				.carousel-indicators{
+				.carousel-indicators {
 					height: 12px;
 					line-height: 12px;
 				}
-				.carousel-indicators span{
+				.carousel-indicators span {
 					width: 11px;
 					height: 11px;
 					border: 1px solid #fff;
@@ -197,6 +197,17 @@
 					carouselIndicatorsMain.appendChild(carouselIndicatorsSpan);
 				}		
 				slider.appendChild(carouselIndicatorsMain);
+				
+				// select carousel indecators after creating
+				const carouselIndicatorsSpans = document.querySelectorAll(".carousel-indicators > span");
+				carouselIndicatorsSpans.forEach((currentSpan, i)=> {
+					console.log(i);
+					currentSpan.dataset.index = i;
+					currentSpan.addEventListener('click', function() {
+						const currentIndex = this.dataset.index;
+						moveSlider(null,currentIndex);
+					});
+				});
 			}
 			function setWidthOfContent(){
 				const currentWidth = window.innerWidth;
@@ -205,8 +216,12 @@
 					slide.style.width = currentWidth + "px";
 				});
 			}
-			function moveSlider(x){
-				n += x;
+			function moveSlider(x, i){
+				if(x){
+					n += x;
+				}else{
+					n = i;
+				}
 				if(n >= imgs.length){
 					n = 0;
 				}
