@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            height: 210px;
+        }
+
+        .container .droppable {
+            width: calc(500px / 3);
+            height: 70px;
+            border: 1px solid #000;
+        }
+
+        .draggable {
+            width: calc(500px / 3);
+            height: 70px;
+            background: tomato;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="droppable">
+        </div>
+        <div class="droppable">
+        </div>
+        <div class="droppable">
+        </div>
+        <div class="droppable"></div>
+        <div class="droppable"></div>
+        <div class="droppable"></div>
+        <div class="droppable"></div>
+        <div class="droppable"></div>
+        <div class="droppable"></div>
+
+        <div class="draggable">
+            Content A
+        </div>
+        <div class="draggable">
+            Content B
+        </div>
+        <div class="draggable">
+            Content C
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $(".draggable").draggable({
+                snap: ".inner",
+                revert: "invalid",
+                containment: ".container",
+            });
+        });
+        $('.droppable').droppable({
+            greedy: true,
+            drop: function (e, ui) {
+                
+                $(this).droppable("destroy");
+                const elLeft = e.target.offsetLeft;
+                const elTop = e.target.offsetTop;
+                console.log(elLeft, elTop, ui.draggable[0])
+                $(ui.draggable[0]).css({
+                    'left': elLeft,
+                    'top': elTop
+                })
+            }
+        });
+        
+    </script>
+</body>
+
+</html>
