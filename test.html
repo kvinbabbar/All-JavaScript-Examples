@@ -37,59 +37,83 @@
             justify-content: center;
             position: absolute !important;
         }
+
+        .droppable.ui-droppable-active {
+            border: 1px solid blue !important;
+        }
+
+        .droppable.ui-droppable-hover {
+            border: 1px solid orangered !important;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="droppable">
-        </div>
-        <div class="droppable">
-        </div>
-        <div class="droppable">
-        </div>
-        <div class="droppable"></div>
-        <div class="droppable"></div>
-        <div class="droppable"></div>
-        <div class="droppable"></div>
-        <div class="droppable"></div>
-        <div class="droppable"></div>
+        <div class="droppable drop1"></div>
+        <div class="droppable drop2"></div>
+        <div class="droppable drop3"></div>
+        <div class="droppable drop4"></div>
+        <div class="droppable drop5"></div>
+        <div class="droppable drop6"></div>
+        <div class="droppable drop7"></div>
+        <div class="droppable drop8"></div>
+        <div class="droppable drop9"></div>
 
-        <div class="draggable">
+        <div class="draggable drag1">
             Content A
         </div>
-        <div class="draggable">
+        <div class="draggable drag2">
             Content B
         </div>
-        <div class="draggable">
+        <div class="draggable drag3">
             Content C
         </div>
     </div>
+    <button id="createNewItem">Create New Item</button>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
     <script>
         $(function () {
-            $(".draggable").draggable({
-                snap: ".inner",
+            const draggableOptions = {
+                stack: '.draggable',
                 revert: "invalid",
                 containment: ".container",
+                cursor: 'grab',
+                opacity: '0.8',
+                start: function (e, ui) {
+                    const droppableELemnts = $('.droppable.ui-droppable-disabled:not(:has(*))');
+                    console.log("children", droppableELemnts.children().length)
+                    if (droppableELemnts.length > 0) {
+                        droppableELemnts.droppable('enable')
+                    }
+                }
+            }
+            $(".draggable").draggable(draggableOptions);
+            $('.droppable').droppable({
+                accept: '.draggable',
+                drop: function (e, ui) {
+                    const elLeft = e.target.offsetLeft;
+                    const elTop = e.target.offsetTop;
+                    $(ui.draggable[0]).css({
+                        'left': elLeft,
+                        'top': elTop
+                    })
+                    $(this).append(ui.draggable);
+                    if ($(e.target).children('.draggable').length > 0) {
+                        $(this).droppable('disable');
+                    }
+                },
+            });
+            $("#createNewItem").on("click", function () {
+                $('.container').append(`
+                    <div class="draggable drag4 ui-draggable">
+                        Content New
+                    </div>`
+                );
+                $(".draggable").draggable(draggableOptions);
             });
         });
-        $('.droppable').droppable({
-            greedy: true,
-            drop: function (e, ui) {
-                
-                $(this).droppable("destroy");
-                const elLeft = e.target.offsetLeft;
-                const elTop = e.target.offsetTop;
-                console.log(elLeft, elTop, ui.draggable[0])
-                $(ui.draggable[0]).css({
-                    'left': elLeft,
-                    'top': elTop
-                })
-            }
-        });
-        
     </script>
 </body>
 
